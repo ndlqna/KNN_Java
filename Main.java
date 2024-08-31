@@ -31,6 +31,12 @@ public class Main {
             a[i] = new viTri(id, x, y, x0, y0, loaiVat);
             a[i].khoangCach();
         }
+		System.out.println("---------------------------------------------------------------------");
+		System.out.println("Danh Sach");
+		System.out.println(String.format("%-4s %-6s %-6s %-15s %-20s", "Id", "X", "Y", "ConVat", "Khoang Cach Voi Con Can Tim"));
+		for(viTri b : a) {
+			System.out.println(b);
+		}
 		Arrays.sort(a, new Comparator<viTri>() {
 			public int compare(viTri c1,viTri c2) {
 				if(c1.khoangCach() < c2.khoangCach()) {
@@ -43,17 +49,17 @@ public class Main {
 		});
 		System.out.println("---------------------------------------------------------------------");
 		System.out.println("Sau Khi Sap Xep!");
-		System.out.println("Id\t X\t Y\tConVat\t\tKhoang Cach Voi Con Can Tim");
+		System.out.println(String.format("%-4s %-6s %-6s %-15s %-20s", "Id", "X", "Y", "ConVat", "Khoang Cach Voi Con Can Tim"));
 		for(viTri b : a) {
 			System.out.println(b);
 		}
 		System.out.println("-----------------------------------------------------------------");
 		System.out.println("Ban Muon Chon Bao Nhieu Con Vat Gan Nhat De Dua Ra Quyet Dinh ?");
 		int choice = sc.nextInt();
-		System.out.println("Top " + n + " Con Vat Gan Nhat:");
-		System.out.println("Id\t X\t Y\tConVat\t\tKhoang Cach Voi Con Can Tim");
+		System.out.println("Top " + choice + " Con Vat Gan Nhat:");
+		System.out.println(String.format("%-4s %-6s %-6s %-15s %-20s", "Id", "X", "Y", "ConVat", "Khoang Cach Voi Con Can Tim"));
 		Map<String, Integer> conVat = new HashMap<>();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < choice; i++) {
             viTri b = a[i];
             System.out.println(b);
             conVat.put(b.getLoaiVat(), conVat.getOrDefault(b.getLoaiVat(), 0) + 1);
@@ -66,6 +72,6 @@ public class Main {
                 maxCount = entry.getValue();
             }
         }
-        System.out.println("\nLoai Vat Xuat Hien Nhieu Nhat Trong Top " + n + " La: " + conNhieuNhat + " (" + maxCount + " lan)");
+        System.out.println("\nLoai Vat Xuat Hien Nhieu Nhat Trong Top " + choice + " La: " + conNhieuNhat + " (" + maxCount + " lan)");
 	}
 }
