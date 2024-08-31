@@ -24,6 +24,7 @@ public class viTri {
 	}
 	@Override
 	public String toString() {
-		return this.id + "\t" + this.x + "\t" + this.y + "\t" + this.loaiVat + "\t\t" + khoangCach();
+		return String.format("%-4d %-6.1f %-6.1f %-15s %-20f", this.id, this.x, this.y, this.loaiVat, this.khoangCach());
+//				this.id + "\t" + this.x + "\t" + this.y + "\t" + this.loaiVat + "\t\t" + khoangCach();
 	}
 }
